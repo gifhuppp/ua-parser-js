@@ -174,7 +174,7 @@
     "@jazzer.js/core": "^1.4.0",
     "@playwright/test": "~1.32.2",
     "jshint": "~2.13.6",
-    "mocha": "~8.2.0",
+    "mocha": "~10.2.0",
     "requirejs": "2.3.2",
     "safe-regex": "^2.1.1",
     "uglify-js": "~3.12.0"
