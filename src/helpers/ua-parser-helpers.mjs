@@ -3,7 +3,7 @@
 // Source: /src/helpers/ua-parser-helpers.js
 
 ///////////////////////////////////////////////
-/*  Helpers for UAParser.js v2.0.0-beta.2
+/*  Helpers for UAParser.js v2.0.0-beta.3
     https://github.com/faisalman/ua-parser-js
     Author: Faisal Salman <f@faisalman.com>
     AGPLv3 License */
@@ -11,7 +11,7 @@
 
 /*jshint esversion: 6 */ 
 
-import { CPU, OS, Engine } from '../enums/ua-parser-enums';
+import { CPU, OS, Engine } from '../enums/ua-parser-enums.mjs';
 
 const isAppleSilicon = (res) => res.os.is(OS.MACOS) && res.cpu.is(CPU.ARM);
 

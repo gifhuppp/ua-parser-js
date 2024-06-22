@@ -1,0 +1,22 @@
+[
+    {
+        "desc"    : "BingPreview",
+        "ua"      : "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534+ (KHTML, like Gecko) BingPreview/1.0b",
+        "expect"  :
+        {
+            "name"    : "BingPreview",
+            "version" : "1.0b",
+            "type"    : "fetcher"
+        }
+    },
+    {
+        "desc"    : "ChatGPT-User",
+        "ua"      : "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+        "expect"  :
+        {
+            "name"    : "ChatGPT-User",
+            "version" : "1.0",
+            "type"    : "fetcher"
+        }
+    }
+]
