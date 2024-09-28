@@ -9,6 +9,7 @@
 
 const { CPU, OS, Engine } = require('../enums/ua-parser-enums');
 const { UAParser } = require('../main/ua-parser');
+const { isFromEU } = require('detect-europe-js');
 
 const getDeviceVendor = (model) => UAParser(`Mozilla/5.0 (Linux; Android 10; ${model}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36`).device.vendor;
 
@@ -34,6 +35,9 @@ const isAppleSilicon = (res) => {
 
 const isChromeFamily = (res) => res.engine.is(Engine.BLINK);
 
+const isElectron = () => !!(process?.versions?.hasOwnProperty('electron') ||    // node.js
+                            / electron\//i.test(navigator?.userAgent));         // browser
+
 const isFrozenUA = (ua) => /^Mozilla\/5\.0 \((Windows NT 10\.0; Win64; x64|Macintosh; Intel Mac OS X 10_15_7|X11; Linux x86_64|X11; CrOS x86_64 14541\.0\.0|Fuchsia|Linux; Android 10; K)\) AppleWebKit\/537\.36 \(KHTML, like Gecko\) Chrome\/\d+\.0\.0\.0 (Mobile )?Safari\/537\.36/.test(ua);
 
 const isStandalonePWA = () => window && (window.matchMedia('(display-mode: standalone)').matches || 
@@ -50,6 +54,8 @@ module.exports = {
     getDeviceVendor,
     isAppleSilicon,
     isChromeFamily,
+    isElectron,
+    isFromEU,
     isFrozenUA,
     isStandalonePWA
 }
